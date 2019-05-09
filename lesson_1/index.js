@@ -76,7 +76,6 @@ function transformData(objArr)
         lastName = objArr[i][Object.keys(objArr[i])[2]];
         mark = objArr[i][Object.keys(objArr[i])[3]];
 
-
         if(mark > 5)
         {
             if(firstName !== '' && lastName !== '')
@@ -87,7 +86,5 @@ function transformData(objArr)
             }
         }
     }
-
-
     return res;
 }
