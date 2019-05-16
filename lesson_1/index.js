@@ -88,7 +88,7 @@ function transformData(objArr)
 
 
     return res;
-}dawdawd
+}
 
 /*
 Часть 5*: 
