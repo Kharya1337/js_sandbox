@@ -6,9 +6,9 @@
 */
 function makeGreetings(age)
 {
-    return (age > 10 && age < 15 || (age % 10) > 4 && (age % 10) <= 9 || (age % 10) == 0) ? `Мой возраст ${age} лет`:
-            ((age % 10) ==1) ?  `Мой возраст ${age} год`:
-            `Мой возраст ${age} годa`;
+    return ((age % 100) > 10 && (age % 100) < 15 || (age % 10) > 4 && (age % 10) <= 9 || (age % 10) === 0) ? `Мой возраст ${age} лет`:
+            ((age % 10) === 1) ?  `Мой возраст ${age} год`:
+            `Мой возраст ${age} года`;
 
 }
 
@@ -21,19 +21,17 @@ splitArray([1, 4, 5, 6, 2], 2)
  */
  function splitArray(array, element)
  {
-    var arr = new Array();
     var newArr = new Array();
-    var j = 0;
-    for(var i = 0; i <= array.length - element; i += 1)
-    {   
-        arr = array.slice(j, j+=element);
-        if(arr[0] != null)
-        {
-            newArr[i] = arr;
-        }
+    if(!element || !Array.isArray(arr) || element < 1 ){
+        return newArr;
+    }
+    for(var i = 0; i <= array.length; i += element)
+    {
+        newArr.push(array.slice(i, i + element));
     }
     return newArr;
  }
+
 
 /*
 Часть 3:
@@ -78,13 +76,37 @@ function transformData(objArr)
 
         if(mark > 5)
         {
-            if(firstName !== '' && lastName !== '')
+            /*if(firstName !== '' && lastName !== '')
             {
                 res[login] = firstName + ' ' + lastName;
             }else{
                 res[login] = firstName + lastName;
-            }
+            }*/
+            res[login] = (firstName + ' ' + lastName).trim();
         }
     }
     return res;
 }
+
+/*
+Часть 5*: 
+Написать функцию addInfinite. Чтобы выполнялся следующий код:
+2 === addInfinite(2).result;
+5 === addInfinite(2)(3).result;
+14 === addInfinite(2)(5)(6)(-7)(8).result;
+
+Где все сравнения - true.
+Возможное количество вызовов вроде (2)(5)... должно быть не ограничено
+ */
+
+ function addInfinite()
+ {
+    inner.result = a;
+    function inner(b)
+    {
+        inner.result += b;
+        return inner;
+    }
+    
+    return inner;
+ }
