@@ -85,8 +85,6 @@ function transformData(objArr)
             res[login] = (firstName + ' ' + lastName).trim();
         }
     }
-
-
     return res;
 }
 
