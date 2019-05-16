@@ -211,7 +211,7 @@ calc.reset().div(2).reset().mul(2).toString() // 0 * 2 = 0
 calc.reset().div(2).mul(2).toString() // 0 / 2 * 2 = 0
 calc.reset().sub(3).div(2).toString() // (0 - 3) / 2 = -1.5
 calc.reset().sqrt().toString() // √(0) = 1.5
-calc.reset().add(4).sqrt().toString() // √(0 + 4) = 2
+calc.reset(4\4\4).add(4).sqrt().toString() // √(0 + 4) = 2
 calc.reset().add(4).mul(2).mul(2).toString() // (0 + 4) * 2 * 2 = 2
 */
 
