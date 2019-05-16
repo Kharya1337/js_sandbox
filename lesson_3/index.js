@@ -191,13 +191,6 @@ class WeightedPoint extends Point{
         return this;
     }
 }
-const p1 = new Point(2, 3.4);
-const p2 = new WeightedPoint(-1, 0.5, 3);
-const line = new Line(p1, p2);
-console.log(line.toString() )
-// "Line(Point[2 3.4] - 3&Point[-1 0.5])"
-console.log(line.length() )
-// 4.172529209005013
 /*
 Part 4*:
 Создать класс CalculatorExtended, который наследует класс Calculator из части 2.
