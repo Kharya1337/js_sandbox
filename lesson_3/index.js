@@ -16,7 +16,7 @@ class Human{
         this.age = age;
     }
 
-    sayHallo() {
+    sayHello() {
         console.log(`Hello, my name is ${this.name}, I am ${this.age} years old`);        
     }
 
@@ -189,6 +189,10 @@ class WeightedPoint extends Point{
         super.set(x, y);
         this.weight = weight;
         return this;
+    }
+
+    getWeight(){
+        return this.weight;
     }
 }
 /*
