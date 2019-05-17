@@ -16,7 +16,7 @@ class Human{
         this.age = age;
     }
 
-    sayHallo() {
+    sayHello() {
         console.log(`Hello, my name is ${this.name}, I am ${this.age} years old`);        
     }
 
