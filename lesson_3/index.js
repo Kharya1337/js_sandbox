@@ -190,6 +190,10 @@ class WeightedPoint extends Point{
         this.weight = weight;
         return this;
     }
+
+    getWeight(){
+        return this.weight;
+    }
 }
 const p1 = new Point(2, 3.4);
 const p2 = new WeightedPoint(-1, 0.5, 3);
