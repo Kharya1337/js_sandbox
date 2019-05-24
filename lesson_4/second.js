@@ -35,9 +35,8 @@ function print(size){
     }
     // arrow = arr
     arrow += spacesLeft + '*\n`';
-    console.log(arrow);
+    return arrow;
 }
-print(10);
 
 
 
