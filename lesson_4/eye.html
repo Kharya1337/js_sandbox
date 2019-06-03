@@ -5,10 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        body{
+            background: #eee;
+        }
+        .head{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        .eye{
+            background: #fff;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: relative;
+        }
+        .eye + .eye{
+            margin-left: 20px;
+        }
+        .eyeball  {
+            width: 6px;
+            height: 6px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: calc(50% - 3px);
+            left: calc(50% - 3px);
+        }  
+
+    </style>
 </head>
 <body>
     
-
+    <div class="head">
+            <div class="eye">
+                    <div class="eyeball" id="eyeball1"></div>
+                </div>
+                <div class="eye">
+                    <div class="eyeball" id="eyeball2"></div>
+                </div>
+    </div>
+    
     <script src="eye.js"></script>
 </body>
 </html>

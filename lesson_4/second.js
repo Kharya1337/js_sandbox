@@ -6,7 +6,7 @@
 */
 
 function print(size){
-    let arrow = '`\n';
+    let arrow = '\n';
     let spaces = ' ';
     let spacesLeft = '';
     let spacesCountLeft = 1;
@@ -34,12 +34,26 @@ function print(size){
         spacesCountLeft +=1;
     }
     // arrow = arr
-    arrow += spacesLeft + '*\n`';
+    arrow += spacesLeft + '*\n';
     return arrow;
 }
 
+function func(num) {
+    let result = '\n';
 
+    for(let i = 0; i < num - 1; i += 1) {
+        result += ' '.repeat(i);
+        result += '*';
+        result += ' '.repeat(num * 2 - i * 2 - 3);
+        result += '*\n';
+    }
+    result += ' '.repeat(num - 1);
+    result += '*\n'
+    return result;
+}
 
+// console.log(func(2));
+// console.log(print(2))
 /*
 *           *
  *         *
@@ -51,146 +65,76 @@ function print(size){
 
 */
 
-"use strict"
+function print2(num) {
+
+}
+
+
+function getArgValue(name, history) {
+    while(1) {
+        let answer = prompt(`Введите ${name} -> `);
+        history.push(answer);
+        const number = parseFloat(answer);
+        if(answer === 'exit') {
+            return false;
+        }     
+        if(!isNaN(parseFloat(answer))) {
+            return answer;
+        }
+    }
+}
 
 function calculate() {
-    const result = { 'history': [], 'formula': '', 'args': {} };
-    function repeat() {
-        const value = prompt('Введите 1, если необходимо провести расчет формули y = kx + b.\nВведите 2, если необходимо провести расчет формули y = x^2.\nВведите exit, если необходимо закончить расчеты.', '');
+    let result = {
+        history: [],
+        formula: '',
+        args: {}
+    };
 
-        function isNumber(n) { return !isNaN(parseFloat(n)) && !isNaN(n - 0) }
-        let _exit = 'no';
+    while(1) {
+        let answer = prompt('Какая формула?');
+        if(answer === 'exit') {
+            return result;
+        }
 
-        function value1() {
-            result.args = {};
-            function funK() {
-                let k = prompt('Введите k для расчета функции y = kx + b.\nВведите exit, если необходимо закончить расчеты.', '');
-                if (k == 'exit' || k == null) {
-                    _exit = 'exit';
-                    result.history.push(_exit);
-                    return result;
-                } else {
-                    switch (isNumber(k)) {
-                        case true:
-                            result.args.k = k;
-                            break;
-                        case false:
-                            funK();
-                            break;
-                    }
-                }
-                return result;
-            }
-
-            function funX() {
-                let x = prompt('Введите x для расчета функции y = kx + b.\nВведите exit, если необходимо закончить расчеты.', '');
-                if (x == 'exit' || x == null) {
-                    _exit = 'exit';
-                    result.history.push(_exit);
-                    return result;
-                } else {
-                    switch (isNumber(x)) {
-                        case true:
-                            result.args.x = x;
-                            break;
-                        case false:
-                            funX();
-                            break;
-                    }
-                }
-                return result;
-            }
-            function funB() {
-                let b = prompt('Введите b для расчета функции y = kx + b.\nВведите exit, если необходимо закончить расчеты.', '');
-                if (b == 'exit' || b == null) {
-                    _exit = 'exit';
-                    result.history.push(_exit);
-                    return result;
-                } else {
-                    switch (isNumber(b)) {
-                        case true:
-                            result.args.b = b;
-                            break;
-                        case false:
-                            funB();
-                            break;
-                    }
-                }
-                return result;
-            }
-            if (_exit !== 'exit') funK();
-            result.history.push(result.args.k);
-
-            if (_exit !== 'exit') funX();
-            result.history.push(result.args.x);
-
-            if (_exit !== 'exit') funB();
-            result.history.push(result.args.b);
-
+        if(answer === `1`) {
             result.formula = 'y = kx + b';
-
-            if (_exit !== 'exit' && result.args.k !== null && result.args.x !== null && result.args.b !== null) alert(`y = ${result.args.k * result.args.x + 1 * (result.args.b)}`);
-            return result;
-        };
-
-        //=================
-
-        function value2() {
             result.args = {};
-
-            function funX() {
-                let x = prompt('Введите x для расчета функции y = x^2.\nВведите exit, если необходимо закончить расчеты.', '');
-                if (x == 'exit' || x == null) {
-                    _exit = 'exit';
-                    result.history.push(_exit);
-                    return result;
-                } else {
-                    switch (isNumber(x)) {
-                        case true:
-                            result.args.x = x;
-                            break;
-                        case false:
-                            funX();
-                            break;
-                    }
-                }
+            let k = getArgValue('k', result.history);
+            if(k === 'false') {
                 return result;
+            } else {
+                result.args.k = k;
             }
+            let x = getArgValue('x', result.history);
+            if(x === 'false') {
+                return result;
+            } else {
+                result.args.x = x;
+            }
+            let b = getArgValue('b', result.history);
+            if(b === 'false') {
+                return result;
+            } else {
+                result.args.b = b;
+            }
+            alert(result.args.k*result.args.x + result.args.b);
+        }
 
-            if (_exit !== 'exit') funX();
-            result.history.push(result.args.x);
-
+        if(answer === `2`) {
             result.formula = 'y = x^2';
-
-            if (_exit !== 'exit' && result.args.x !== null) alert(`y = ${result.args.x * result.args.x}`);
-            return result;
-        };
-
-        //================================
-        switch (value) {
-            case '1':
-                value1();
-                repeat();
-                break;
-            case '2':
-                value2();
-                repeat();
-                break;
-
-            case 'exit':
-                result.history.push('exit');
-                break;
-
-            case null:
-                break;
-
-            default:
-                calculate();
-                break;
-        };
-        return result;
-
+            result.args = {};
+            let x = getArgValue('x', result.history);
+            if(x === 'false') {
+                return result;
+            } else {
+                result.args.x = x;
+            }
+            alert(Math.pow(result.args.x, 2));
+        }
     }
-    repeat();
+    
     return result;
-};
+}
+
+calculate();
