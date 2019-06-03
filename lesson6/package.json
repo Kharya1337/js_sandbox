@@ -1,0 +1,31 @@
+{
+  "name": "lesson6",
+  "version": "0.0.0",
+  "description": "Womework6\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[H",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./index.html",
+    "build": "rm -rf dist && parcel build ./index.html  —pulbic-url ./s_sandbox",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kharya1337/js_sandbox.git"
+  },
+  "author": "Illia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kharya1337/js_sandbox/issues"
+  },
+  "homepage": "https://github.com/Kharya1337/js_sandbox#readme",
+  "dependencies": {
+    "email-validator": "^2.0.4",
+    "format-validator": "^0.9.0",
+    "gh-pages": "^2.0.1",
+    "parcel": "^1.12.3",
+    "random-email": "^1.0.3"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
