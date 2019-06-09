@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,YACI,iBAAkB,CAClB,OAAQ,CACR,0BACJ,CACA,MACI,UACJ,CACA,MACI,WACJ","file":"style.55bbe6d0.css","sourceRoot":"..","sourcesContent":["#prev, #next {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n}\r\n#prev {\r\n    left: -20px;\r\n}\r\n#next {\r\n    right: -20px;\r\n}\r\n"]}
