@@ -20,6 +20,9 @@ close.addEventListener('click', event => {
 
 let valid = document.getElementById('validate');
 valid.addEventListener('change', event => {
+    if(valid.value=='') {
+        valid.style.border = '2px solid #eee';
+    }
     if(validator.validate(valid.value)) {
         valid.style.border = '2px solid lightgreen';
     } else {
