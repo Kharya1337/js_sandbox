@@ -43,10 +43,9 @@ function clearNumbers(arr)
 
         return el.filter(num => num!= null);
     });
-
-    return arr.filter(el => el != undefined);
+    arr = arr.filter(el => el != undefined);
+    return arr;
 }
-
 
 /*
 Часть 3:
@@ -75,10 +74,9 @@ function reverse(num)
         arr[i] = arr[i].join('');
         
     }
-
-    return arr.reverse();
+    arr = arr.reverse();
+    return arr;
 }
-
 
 /*
 Часть 4*:
