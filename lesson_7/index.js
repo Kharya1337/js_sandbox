@@ -90,5 +90,5 @@ class MiniSlider {
     }
 }
 
-// let slider = new MiniSlider('someId');
-// window.slider = slider;
+let slider = new MiniSlider('someId');
+window.slider = slider;
