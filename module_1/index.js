@@ -3,7 +3,7 @@ import { createSocket } from "dgram";
 import Cat from './cat.png';
 
 function matrixDiff(arr1, arr2) {
-    if(!Array.isArray(arr1) && !Array.isArray(arr2) && arr1.length != arr2.length) {
+    if(!Array.isArray(arr1) && !Array.isArray(arr2) || arr1.length != arr2.length) {
         return NaN;
     } else {
         let result = 0;
@@ -19,6 +19,7 @@ function matrixDiff(arr1, arr2) {
         return result;
     }
 }
+window.matrixDiff = matrixDiff;
 
 /*
 Написать функцию “strangeSearch”, которая принимает один аргумент, массив слов.
@@ -28,7 +29,6 @@ function matrixDiff(arr1, arr2) {
 inputElement.value
 window.location.href
 */
-
 function strangeSearch(arr) {
     if(!Array.isArray(arr)) {
         return undefined;
@@ -49,22 +49,24 @@ function strangeSearch(arr) {
     search.innerHTML = 'Search';
     let res = 'https://www.youtube.com/results?search_query=';
     let query = '';
+    const words = [];//remake
     let labels = document.getElementsByTagName('label');
     let numbers = document.getElementsByClassName('number');
     search.addEventListener('click', el => {
         for (let i = 0; i < numbers.length; i+=1) {
             if(numbers[i].value != 0) {
-                query += labels[i].innerHTML + '+';
+                words.push({word: labels[i].innerHTML, value: numbers[i].value});//remake
             }
         }
-        query = query.substring(0, query.length - 1);
+        words.sort((a, b) => a.value - b.value);//remake
+        query = words.map(o => o.word).join('+');//remake
         // console.log(res + query);
         window.location.href = res + query;
     });
     block.append(search);
     document.body.append(block);
 }
-
+window.strangeSearch = strangeSearch;
 strangeSearch(['Bill', 'Kill', 'Song']);
 
 let mask = new MaskedInput();
