@@ -65,7 +65,7 @@ fetch('https://api.exchangeratesapi.io/latest', {method: 'GET'})
         });
     });
 
-//туц
+
 let getRate = document.getElementById('get-rate');
 let start_at = document.getElementById('start-time');
 let end_at = document.getElementById('end-time');
