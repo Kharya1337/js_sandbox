@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="convert">
+        <h3 id="converter-header">Currency Converter <span id="convert-time"></span></h3>
+        <select id="currency1">
+            <option value="EUR">EUR - euro</option>
+            <option value="USD">USD - dollar</option>
+            <option value="GBP">GBP - pound sterling</option>
+        </select>
+        <button id="swap">⇄</button>
+        <select id="currency2">
+            <option value="EUR">EUR - euro</option>
+            <option value="USD">USD - dollar</option>
+            <option value="GBP">GBP - pound sterling</option>
+        </select>
+        <input type="text" value="1.00" id="currency1-value">
+        <span id="arrow">→</span>
+        <input type="text" value="1.00" id="currency2-value" readonly>
+    </div>
+
+    <div id="time-convert">
+        <h3 id="converter-header"> 
+            <select id="currency">
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+            </select> rate from <input type="date" id="start-time"> to <input type="date" id="end-time"></h3>
+        <button id="get-rate">get-rate</button>
+        <img src="load.gif" alt="load" id="load">
+        <ul id="time-list"></ul>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
