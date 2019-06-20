@@ -67,9 +67,11 @@ fetch('https://api.exchangeratesapi.io/latest', {method: 'GET'})
 
 
 let getRate = document.getElementById('get-rate');
+let start_at = document.getElementById('start-time');
+let end_at = document.getElementById('end-time');
+start_at.value = new Date().toLocaleDateString('sv');
+end_at.value = new Date().toLocaleDateString('sv');
 getRate.addEventListener('click', () => {
-    let start_at = document.getElementById('start-time');
-    let end_at = document.getElementById('end-time');
     // console.log(new Date(start_at.value).getTime());
     // console.log(start_at.value);
     let ul = document.getElementById('time-list');
