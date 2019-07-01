@@ -1,5 +1,4 @@
 import MaskedInput from "./mask";
-import { createSocket } from "dgram";
 import Cat from './cat.png';
 
 function matrixDiff(arr1, arr2) {
