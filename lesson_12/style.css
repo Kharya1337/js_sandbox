@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+}
+#delete-selected{
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 7px;
+    text-align: left;
+    display: none;
+}
+
+.field{
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: center;
+    overflow-y: scroll;
+    height: 350px;
+    width: 400px;
+    border: 1px solid rgb(44, 26, 26);
+    background: rgb(156, 146, 146);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#add-todo{
+    margin-top: 15px;
+    width: 80%;
+    height: 30px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.todo-block{
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.delete-todo{
+    background: none;
+    border: none;
+    color: red;
+    margin-left: 5px;
+}
+
+.todo-text{
+    margin-left: 5px;
+}
+
+#select-all{
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    transform: translateY(30%)
+}
