@@ -33,11 +33,6 @@ selectAll.addEventListener('change', () => {
             }
         }
         saveMetod();
-    // // localStorage.data = JSON.stringify(data);
-    //     if(data.length === 0) {
-    //         todoList.innerHTML = '<h2>Список пуст</h2>';
-    //         deleteSelectedButton.style.display = 'none';
-    //     }
     }); 
 });
 
