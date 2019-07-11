@@ -45,7 +45,6 @@ export default class Timer extends React.Component {
     }
 
     onPauseClick() {
-        console.log(12);
         this.pauseStop();
     }
 
@@ -55,6 +54,10 @@ export default class Timer extends React.Component {
             seconds: 0,
             minutes: 0
         });
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.state.interval);
     }
 
     timer() {
@@ -76,7 +79,7 @@ export default class Timer extends React.Component {
         let minutes = this.state.minutes <= 9 ? `0${this.state.minutes}` : this.state.minutes;
         return (
             <div style={{marginBottom: '20px'}}>
-                <button id='start' onClick={this.onStartClick} >Start</button>
+                <button id='start' onClick={this.onStartClick}>Start</button>
                 <button id='stop' onClick={this.onStopClick}>Stop</button>
                 <button id='pause' onClick={this.onPauseClick}>Pause</button>
                 <span id='timer'>{minutes}:{seconds}</span>
