@@ -1,64 +1,65 @@
 import React from 'react';
-
-
-class LoadCountries extends React.Component {
-    render() {
-        return (
-            <li>{this.props.country} <img src={this.props.flag} alt="" height='20px'/></li>
-        )
-    }
-}
+import PropTypes from 'prop-types';
 
 export default class CountrySelect extends React.Component{
-    constructor() {
+
+    constructor(props) {
         super();
+
+        if(!CountrySelect.Countries) {
+            CountrySelect.Countries = fetch('https://restcountries.eu/rest/v2/all', {method: 'GET'})
+            .then(res => res.json());
+        } 
+
+        CountrySelect.Countries
+            .then(res => {
+                let arr = [];   
+                for (const key of res) {
+                        arr.push({country: key['name'],
+                                flag: key['flag']}); 
+                }   
+                this.setState({
+                    countriesFlags: arr
+                });
+            
+        });
+
         this.state = {
             countriesFlags: [{
                 country: '',
                 flag: ''
             }],
+            selected: props.defaultCountry
         }
-        this.maxHeight = this.maxHeight.bind(this);
     }
 
-    componentDidMount() {
-        return fetch('https://restcountries.eu/rest/v2/all', {method: 'GET'})
-            .then(res => res.json())
-            .then(res => {
-                let arr = [];   
-                for (const key of res) {
-                        arr.push({country: key['name'],
-                                  flag: key['flag']}); 
-                }   
-                this.setState({
-                    countriesFlags: arr
-                });
-                
-            });
+    onClick(country) {
+        this.setState({selected: country});
     }
 
-    maxHeight(){   
-        if(!this.props.maxHeight){
-            return '100%';
-        }
-        return `${this.props.maxHeight}px`
-    }
 
     render() {   
         let data = this.state.countriesFlags;
         return (
-        <div style={{height: this.maxHeight(),
+        <div style={{height: this.props.maxHeight,
                     overflowY: 'scroll'}}>
             <ul>
                 {data.map((country, index) => 
-                    <LoadCountries
-                        country={country.country} 
-                        flag={country.flag}
+                    <li
+                        onClick = {() => this.onClick(country.country)}
+                        style = {{backgroundColor: this.state.selected === country.country ? 'green' : 'transparent'}}
                         key={index}
-                    />
+                    >
+                        {country.country} <img src={country.flag} alt="" height='20px'/>
+                    </li>
                 )}
             </ul>
         </div>
         )
     }
 }
+
+CountrySelect.defaultProps = {
+    maxHeight: 150,
+    defaultCountry: 'Ukraine',
+};
