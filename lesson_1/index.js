@@ -85,10 +85,8 @@ function transformData(objArr)
             res[login] = (firstName + ' ' + lastName).trim();
         }
     }
-
-
     return res;
-}dawdawd
+}
 
 /*
 Часть 5*: 

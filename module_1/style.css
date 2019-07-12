@@ -1,0 +1,28 @@
+#mask {
+    margin-top: 50px;
+    animation-duration: 3s;
+    animation-name: puls;
+    animation-iteration-count: infinite;
+    box-sizing: border-box;
+}
+
+@keyframes puls {
+    from {
+        border: 1px solid red;
+        -webkit-box-shadow: 0px 0px 14px 0px rgba(240,15,0,1);
+        -moz-box-shadow:    0px 0px 14px 0px rgba(240,15,0,1);
+        box-shadow: 0px 0px 14px 0px rgba(240,15,0,1);
+    }
+    50% {
+        border: 1px solid red;
+        -webkit-box-shadow: 0px 0px 0px -7px rgba(240,15,0,1);
+        -moz-box-shadow:    0px 0px 0px -7px rgba(240,15,0,1);
+        box-shadow: 0px 0px 0px -7px rgba(240,15,0,1);
+    }
+    to {
+        border: 1px solid red;
+        -webkit-box-shadow: 0px 0px 14px 0px rgba(240,15,0,1);
+        -moz-box-shadow: 0px 0px 14px 0px rgba(240,15,0,1);
+        box-shadow: 0px 0px 14px 0px rgba(240,15,0,1);
+    }
+}

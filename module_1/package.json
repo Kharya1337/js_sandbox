@@ -1,0 +1,19 @@
+{
+  "name": "module_1",
+  "version": "0.0.0",
+  "description": "Module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./index.html",
+    "build": "rm -rf dist && parcel build ./index.html  --public-url /js_sandbox",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Illia",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^2.0.1",
+    "mask-input": "^1.0.1",
+    "parcel": "^1.12.3"
+  }
+}
