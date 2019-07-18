@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+
+body{
+    background: #000;
+    font-family: 'Montserrat', sans-serif;
+    color: #FCFCFC;
+    margin: 0;
+}
+
+.container{
+    margin: 0 auto;
+    width: 100%;
+    height: 667px;
+    padding: 0 68px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+h1{
+    margin: 0;
+    flex-basis: 70%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 44px;
+    align-items: center;
+}
+.login-header{
+    margin-top: 202px;
+}
+.successful-header{
+    margin-top: 71px;
+}
+
+address{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-basis: 100%;
+}
+
+a{
+    margin-top: 12px;
+    font-size: 10px;
+    color: #FCFCFC;
+    text-decoration: none;
+}
+
+#forgot{
+    flex-basis: 100%;
+    text-align: right;
+}
+
+#havent-acc{
+    margin-bottom: 83px;
+}
+
+.error-message{
+    color: #FF473A;
+    font-size: 12px;
+}
+
+.login-field{
+    flex-basis: 100%;
+    height: 42px;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+#login-button, #go-to-app, #to-login, #to-main{
+    cursor: pointer;
+    background: #FF473A;
+    border: none;
+    flex-basis: 100%;
+    margin-top: 27px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 42px;
+    height: 42px;
+    color: #FFFFFF;
+    align-self: center;
+}
+
+#login-button:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+#go-to-app{
+    margin-bottom: 83px;
+}
+
+#welcome, #react-logo{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+#welcome{
+    font-size: 18px;
+    margin-top: -60px;
+}
+
+.signup-header{
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.bin-container{
+    margin: 0 auto;
+    padding: 0 68px 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bin-header{
+    flex-basis: 100%
+}
+
+#to-main{
+    position: fixed;
+    right: 15px;
+}
+
+@media screen and (max-height: 670px) {
+    .container{
+        height: 500px;
+    }
+    .login-header{
+        margin-top: 100px;
+    }
+    #welcome{
+        margin-top: -30px;
+    }
+    #react-logo{
+        margin-left: -10px;
+    }
+}
