@@ -73,7 +73,7 @@ a{
     font-size: 12px;
 }
 
-#login-button, #go-to-app, #to-login{
+#login-button, #go-to-app, #to-login, #to-main{
     cursor: pointer;
     background: #FF473A;
     border: none;
@@ -110,6 +110,23 @@ a{
     flex-basis: 100%;
     text-align: center;
     margin-top: 100px;
+}
+
+.bin-container{
+    margin: 0 auto;
+    padding: 0 68px 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bin-header{
+    flex-basis: 100%
+}
+
+#to-main{
+    position: fixed;
+    right: 15px;
 }
 
 @media screen and (max-height: 670px) {

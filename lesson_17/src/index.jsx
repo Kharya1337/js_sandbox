@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainPage from './main-page';
 import LodinSuccessful from './login-successful';
 import Login from './login';
 import SignUp from './signup';
-import {BrowserRouter as Router, Route, Switch, NavLink, Redirect, Prompt} from 'react-router-dom';
+import JSONBin from './jsonbin';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 
 ReactDOM.render((
     <Router>
@@ -13,6 +13,9 @@ ReactDOM.render((
             <Redirect from="/" exact to="/login" />
             <Route path="/welcome" component={LodinSuccessful} />
             <Route path="/signup" component={SignUp} />
+            <Route path="/bin/:id" component={JSONBin} />
         </Switch>
     </Router>
 ), document.getElementById('root'));
+
+
