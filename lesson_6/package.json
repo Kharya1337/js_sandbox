@@ -23,7 +23,7 @@
     "email-validator": "^2.0.4",
     "format-validator": "^0.9.0",
     "gh-pages": "^2.0.1",
-    "parcel": "^1.12.3",
+    "parcel": "^2.8.2",
     "random-email": "^1.0.3"
   },
   "devDependencies": {},
