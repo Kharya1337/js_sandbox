@@ -13,6 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "gh-pages": "^2.0.1",
-    "parcel": "^1.12.3"
+    "parcel": "^2.8.2"
   }
 }
